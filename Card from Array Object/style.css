@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-family: 'poppins';
+    color: white;
+    background-color: #000;
+}
+
+main{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.card{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.607);
+    border-radius: 1rem;
+    align-items: center     ;
+}
+
+.card .pp{
+    width: 50%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.pp img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card p{
+    font-size: 0.7rem;
+    font-weight: 400;
+    /* opacity: 0.8; */
+    text-align: center;
+}
+.card h3{
+    text-transform: uppercase;
+}
+
+.card h5{
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width:500px){
+    .card h3{
+        font-size: 2rem;
+    }
+
+    .card h5{
+        font-size: 1rem;
+    }
+    .card p{
+        font-size: 1rem;
+    }
+}
