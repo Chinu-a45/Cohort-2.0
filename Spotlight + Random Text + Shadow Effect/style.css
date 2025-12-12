@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root{
+    --x: 500px;
+    --y: 5px
+}
+
+.first{
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.container{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(200px at var(--x) var(--y), rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.954));
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.second{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+}
+
+.second p{
+    font-family: sans-serif;
+}
+
+
+.third{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+@property --rotateValue{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotateEffect {
+    from{
+        --rotateValue: 0deg;
+    }
+    to{
+        --rotateValue: 360deg;
+    }
+}
+
+.third .box{
+    width: 30%;
+    height: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: white;
+    border-radius: 20px;
+    border: 4px solid transparent;
+    transition: all 0.5s ease;
+}
+
+.third .box:hover{
+    box-shadow: 0 0 50px rgb(236, 0, 67);
+    background: linear-gradient(rgb(0, 0, 0)) padding-box, conic-gradient(from var(--rotateValue),black,rgb(236, 0, 67),rgb(236, 0, 67),black) border-box;
+    animation: rotateEffect 3s infinite ease;
+    color: rgb(236, 0, 67);
+    text-shadow: 0 0 5px rgb(236, 0, 67);
+}
+
+.box h1{
+    font-size: 1.5rem;
+}
+
+.box p{
+    font-size: 0.8rem;
+}
+
+
+.third .box img{
+    width: 100%;
+    margin-bottom: 1rem;
+    
+}
+
+.mobile{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+@media (max-width:500px){
+    .first{
+        display: none;
+
+    }
+    .second{
+        display: none;
+    }
+
+    .third{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+}
